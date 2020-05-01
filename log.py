@@ -3,7 +3,6 @@ import string
 import subprocess
 #import qrcode
 
-
 '''
 with open('information.txt', 'w+') as f:
     user = []
@@ -59,6 +58,8 @@ def wfile(username,password,fname):
     with open(fname, 'information.txt') as f:
         data = username + '\t' + password + '\n'
         f.write(data)
+
+
 '''
 def make_code(text):
 	qr = qrcode.QRCode(version=5,
