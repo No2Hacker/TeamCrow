@@ -1,6 +1,9 @@
 from random import choice
 import string
 import subprocess
+import numpy
+import zxing
+
 #import qrcode
 
 '''
@@ -25,6 +28,7 @@ def newuser(name):
         	else:
         		with open('information.txt', 'w+') as f:
         			f.write(name+','+pwd+'\n')
+
         	#break
     #return username
             #subprocess.run("useradd %s &> /dev/null" % username, shell=True)
@@ -32,12 +36,14 @@ def newuser(name):
             #break
         #return username
 
+
 def olduser(username, password):
 	with open('information.txt','r') as f:
 		if int(password) == user[username]:
 			print(username, "welcome back")
 		else:
 			print('there is no such person')
+
 
 def login():
 	N = 'New User Login'
@@ -53,6 +59,7 @@ def login():
 		olduser(username, password)
 	else:
 		print('Bye!')
+
 
 def wfile(username,password,fname):
     with open(fname, 'information.txt') as f:
@@ -72,5 +79,6 @@ qr.make(fit = True)
 img = qr.make_image()
 img.show()
 '''
+
 if __name__ == '__main__':
     login()
